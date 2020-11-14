@@ -1,0 +1,73 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "owner_id",
+        "dbType": "integer:unsigned:foreign,people,id",
+        "htmlType": "select",
+        "relation": "mt1,Car,owner_id,id",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "brand",
+        "dbType": "string,50",
+        "htmlType": "text",
+        "validations": "required|min:5|max:50"
+    },
+    {
+        "name": "color",
+        "dbType": "string,30",
+        "htmlType": "text",
+        "validations": "required"
+    },
+    {
+        "name": "cylinder",
+        "dbType": "string,8",
+        "htmlType": "number",
+        "validations": "required"
+    },
+    {
+        "name": "doors",
+        "dbType": "string,1",
+        "htmlType": "number",
+        "validations": "required"
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+
+
+]

@@ -41,11 +41,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('users', 'UserController')->middleware('auth');
 
-Auth::routes(['verify' => true]);
+Route::resource('people', 'PersonController');
 
-Route::get('/home', 'HomeController@index')->middleware('verified');
+Route::resource('users', 'UserController')->middleware('auth');
 
-Route::resource('posts', 'PostController');
 
-Route::resource('posters', 'PosterController');
+Route::resource('cars', 'CarController');
