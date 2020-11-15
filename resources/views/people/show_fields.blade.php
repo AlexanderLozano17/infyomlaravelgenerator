@@ -1,54 +1,29 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{{ $person->id }}</p>
-</div>
-
 <!-- Identification Field -->
-<div class="form-group">
-    {!! Form::label('identification', 'Identification:') !!}
-    <p>{{ $person->identification }}</p>
+<div class="form-group col-sm-6">
+    <label for="identification">identification</label>
+    <input type="text" class="form-control" id="identification" value="{{ $person->identification }}">
 </div>
 
 <!-- Email Field -->
-<div class="form-group">
-    {!! Form::label('email', 'Email:') !!}
-    <p>{{ $person->email }}</p>
+<div class="form-group col-sm-6">
+    <label for="email">email</label>
+    <input type="text" class="form-control" id="email" value="{{ $person->email }}">
 </div>
 
 <!-- First Name Field -->
-<div class="form-group">
-    {!! Form::label('first_name', 'First Name:') !!}
-    <p>{{ $person->first_name }}</p>
-</div>
-
-<!-- Second Name Field -->
-<div class="form-group">
-    {!! Form::label('second_name', 'Second Name:') !!}
-    <p>{{ $person->second_name }}</p>
-</div>
-
-<!-- Last Name Field -->
-<div class="form-group">
-    {!! Form::label('last_name', 'Last Name:') !!}
-    <p>{{ $person->last_name }}</p>
+<div class="form-group col-sm-6">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" value="{{ $person->first_name }} {{ $person->second_name }} {{ $person->last_name }} ">
 </div>
 
 <!-- Age Field -->
-<div class="form-group">
-    {!! Form::label('age', 'Age:') !!}
-    <p>{{ $person->age }}</p>
+<div class="form-group col-sm-6">
+    <label for="age">Age</label>
+    <input type="text" class="form-control" id="age" value="{{ $person->age }}">
 </div>
 
 <!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{{ $person->created_at }}</p>
+<div class="form-group col-sm-6">
+    <label for="date">Date Register</label>
+    <input type="text" class="form-control" id="date" value="{{ $person->created_at }}">
 </div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{{ $person->updated_at }}</p>
-</div>
-

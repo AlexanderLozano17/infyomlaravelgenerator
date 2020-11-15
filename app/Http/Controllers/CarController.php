@@ -74,8 +74,8 @@ class CarController extends AppBaseController
     public function show($id)
     {
         
-        $car = Car::find($id);
-
+        $car = Car::with('owner')->find($id);
+        //return $this->sendResponse($car, 'Cars retrieved successfully');
         if (empty($car)) {
             Flash::error('Car not found');
 

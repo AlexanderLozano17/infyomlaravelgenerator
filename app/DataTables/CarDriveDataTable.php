@@ -2,12 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\Car;
-use App\Models\Person;
+use App\Models\CarDrive;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
-class CarDataTable extends DataTable
+class CarDriveDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -19,19 +18,18 @@ class CarDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'cars.datatables_actions');
+        return $dataTable->addColumn('action', 'car_drives.datatables_actions');
     }
 
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Car $model
+     * @param \App\Models\CarDrive $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Car $model)
+    public function query(CarDrive $model)
     {
-        //return $model->newQuery();
-        return Car::with('owner')->newQuery();
+        return CarDrive::with(['car', 'driver'])->newQuery();
     }
 
     /**
@@ -67,10 +65,9 @@ class CarDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'brand' => ['searchable' => false],
-            'color' => ['searchable' => false],
-            'cylinder' => ['searchable' => false],
-            'doors' => ['searchable' => false],
+            'car.brand',
+            'driver.first_name',
+            'status'
         ];
     }
 
@@ -81,6 +78,6 @@ class CarDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'cars_datatable_' . time();
+        return 'car_drives_datatable_' . time();
     }
 }

@@ -3,18 +3,19 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Car
+            Operation
         </h1>
     </section>
     <div class="content">
+        @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row" style="padding-left: 20px">
-                    @include('cars.show_fields')
+                <div class="row">
+                    {!! Form::open(['route' => 'operations.store']) !!}
 
-                    <div class="form-group col-sm-12">
-                        <a href="{{ route('cars.index') }}" class="btn btn-default">Back</a>
-                    </div>
+                        @include('operations.fields')
+
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

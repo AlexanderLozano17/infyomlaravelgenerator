@@ -22,7 +22,7 @@
     {!! Form::number('doors', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Doors Field -->
+<!-- Owner Field -->
 <div class="form-group col-sm-6">
    <select name="owner_id" class="form-control" placeholder="--Seleccione--">
     <option value="">--Selecccione--</option> 

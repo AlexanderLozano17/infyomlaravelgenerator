@@ -1,5 +1,5 @@
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{!! route('users.index') !!}"><i class="fa fa-user"></i><span>Usuarios</span></a>
+    <a href="{!! route('users.index') !!}"><i class="fa fa-user"></i><span>Users</span></a>
 </li>
 
 <li class="{{ Request::is('people*') ? 'active' : '' }}">
@@ -8,5 +8,13 @@
 
 <li class="{{ Request::is('cars*') ? 'active' : '' }}">
     <a href="{{ route('cars.index') }}"><i class="fa fa-edit"></i><span>Cars</span></a>
+</li>
+
+<li class="{{ Request::is('operations*') ? 'active' : '' }}">
+    <a href="{{ route('operations.index') }}"><i class="fa fa-edit"></i><span>Operations</span></a>
+</li>
+
+<li class="{{ Request::is('carDrives*') ? 'active' : '' }}">
+    <a href="{{ route('carDrives.index') }}"><i class="fa fa-edit"></i><span>Car Drives</span></a>
 </li>
 

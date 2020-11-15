@@ -69,6 +69,6 @@ class Car extends Model
      **/
     public function owner()
     {
-        return $this->belongsTo(\App\Models\Person::class, 'owner_id', 'id')->select('id', DB::raw("CONCAT(first_name,' ',second_name,' ',last_name) as owner"));
+        return $this->belongsTo(Person::class, 'owner_id', 'id');
     }
 }

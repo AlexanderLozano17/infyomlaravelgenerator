@@ -11,15 +11,33 @@
         "inIndex": false
     },
     {
-        "name": "operation",
-        "dbType": "string,50",
-        "htmlType": "text",
-        "validations": "required|min:5|max:50"
+        "name": "car_id",
+        "dbType": "integer:unsigned:foreign,cars,id",
+        "htmlType": "selectTable:cars:id,brand",
+        "relation": "mt1,CarDrive,car_id,id",
+        "validations": "required",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
     },
     {
-        "name": "description",
-        "dbType": "string,150",
-        "htmlType": "textarea",
+        "name": "driver_id",
+        "dbType": "integer:unsigned:foreign,people,id",
+        "htmlType": "selectTable:people:id,first_name",
+        "relation": "mt1,CarDrive,driver_id,id",
+        "validations": "required",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "status",
+        "dbType": "string,1",
+        "htmlType": "select,Activo:A,Inactivo:I",
         "validations": "required"
     },
     {

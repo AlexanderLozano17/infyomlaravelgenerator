@@ -2,17 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\Car;
+use App\Models\CarDrive;
 use App\Repositories\BaseRepository;
-use Illuminate\Support\Facades\DB;
 
 /**
- * Class CarRepository
+ * Class CarDriveRepository
  * @package App\Repositories
- * @version November 13, 2020, 4:43 am UTC
+ * @version November 14, 2020, 8:32 pm UTC
 */
 
-class CarRepository extends BaseRepository
+class CarDriveRepository extends BaseRepository
 {
     /**
      * @var array
@@ -36,11 +35,11 @@ class CarRepository extends BaseRepository
      **/
     public function model()
     {
-        return Car::class;
+        return CarDrive::class;
     }
 
-    public function carsOwner()
+    public function getDataCarDriver($id)
     {
-        return  Car::with('owner')->get();
+        return CarDrive::with('car', 'driver')->find($id);
     }
 }

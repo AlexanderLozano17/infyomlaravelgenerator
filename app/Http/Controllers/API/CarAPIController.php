@@ -40,7 +40,7 @@ class CarAPIController extends AppBaseController
             $request->get('limit')
         );
 
-        return $this->sendResponse($cars->toArray(), 'Cars retrieved successfully');
+        return $this->sendResponse(Car::with('owner')->get(), 'Cars retrieved successfully');
     }
 
     /**

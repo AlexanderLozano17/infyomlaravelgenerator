@@ -49,3 +49,7 @@ Route::resource('users', 'UserController')->middleware('auth');
 
 
 Route::resource('cars', 'CarController');
+
+Route::resource('operations', 'OperationController');
+
+Route::resource('carDrives', 'CarDriveController');
