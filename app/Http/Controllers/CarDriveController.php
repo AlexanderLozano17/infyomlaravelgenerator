@@ -79,7 +79,7 @@ class CarDriveController extends AppBaseController
     public function show($id)
     {
         $carDrive = $this->carDriveRepository->getDataCarDriver($id);
-        //return $this->sendResponse($carDrive, 'Cars retrieved successfully');
+        
         if (empty($carDrive)) {
             Flash::error('Car Drive not found');
 

@@ -11,10 +11,14 @@
 </li>
 
 <li class="{{ Request::is('operations*') ? 'active' : '' }}">
-    <a href="{{ route('operations.index') }}"><i class="fa fa-edit"></i><span>Operations</span></a>
+    <a href="configuration"><i class="fa fa-edit"></i><span>Configurations</span></a>
 </li>
 
 <li class="{{ Request::is('carDrives*') ? 'active' : '' }}">
     <a href="{{ route('carDrives.index') }}"><i class="fa fa-edit"></i><span>Car Drives</span></a>
+</li>
+
+<li class="{{ Request::is('carOperations*') ? 'active' : '' }}">
+    <a href="{{ route('carOperations.index') }}"><i class="fa fa-edit"></i><span>Car Operations</span></a>
 </li>
 

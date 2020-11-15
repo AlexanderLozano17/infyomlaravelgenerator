@@ -6,31 +6,29 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class CarDrive
+ * Class CarOperation
  * @package App\Models
- * @version November 14, 2020, 8:32 pm UTC
+ * @version November 15, 2020, 4:24 am UTC
  *
- * @property \App\Models\CarDrive $car
- * @property \App\Models\CarDrive $driver
- * @property string $status
+ * @property \App\Models\CarOperations $car
+ * @property \App\Models\CarOperations $operation
  */
-class CarDrive extends Model
+class CarOperation extends Model
 {
     use SoftDeletes;
 
-    public $table = 'car_drives';
+    public $table = 'car_operations';
     
 
     protected $dates = ['deleted_at'];
 
 
     protected $primaryKey = 'id';
- 
+
     public $fillable = [
         'id',
-        'status',
         'car_id',
-        'driver_id'
+        'operation_id'
     ];
 
     /**
@@ -41,8 +39,7 @@ class CarDrive extends Model
     protected $casts = [
         'id' => 'integer',
         'car_id' => 'integer',
-        'driver_id' => 'integer',
-        'status' => 'string'
+        'operation_id' => 'integer'
     ];
 
     /**
@@ -52,8 +49,7 @@ class CarDrive extends Model
      */
     public static $rules = [
         'car_id' => 'required',
-        'driver_id' => 'required',
-        'status' => 'required'
+        'operation_id' => 'required'
     ];
 
     /**
@@ -67,8 +63,8 @@ class CarDrive extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function driver()
+    public function operation()
     {
-        return $this->belongsTo(Person::class, 'driver_id', 'id');
+        return $this->belongsTo(Operation::class, 'operation_id', 'id');
     }
 }

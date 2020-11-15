@@ -1,0 +1,61 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "car_id",
+        "dbType": "integer:unsigned:foreign,cars,id",
+        "htmlType": "text",
+        "relation": "mt1,CarOperations,car_id,id",
+        "validations": "required",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "operation_id",
+        "dbType": "integer:unsigned:foreign,operations,id",
+        "htmlType": "text",
+        "relation": "mt1,CarOperations,operation_id,id",
+        "validations": "required",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+
+
+]

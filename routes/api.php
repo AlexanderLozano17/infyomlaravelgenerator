@@ -26,3 +26,5 @@ Route::resource('cars', 'CarAPIController');
 Route::resource('operations', 'OperationAPIController');
 
 Route::resource('car_drives', 'CarDriveAPIController');
+
+Route::resource('car_operations', 'CarOperationAPIController');

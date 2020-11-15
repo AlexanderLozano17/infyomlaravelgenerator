@@ -21,6 +21,11 @@ class OperationController extends AppBaseController
         $this->operationRepository = $operationRepo;
     }
 
+    public function configuration()
+    {
+        return view('operations.configuration');
+    }
+
     /**
      * Display a listing of the Operation.
      *
@@ -52,8 +57,6 @@ class OperationController extends AppBaseController
     public function store(CreateOperationRequest $request)
     {
         $input = $request->all();
-
-        $operation = $this->operationRepository->create($input);
 
         Flash::success('Operation saved successfully.');
 

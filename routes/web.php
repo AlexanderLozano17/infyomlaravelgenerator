@@ -47,9 +47,14 @@ Route::resource('people', 'PersonController');
 
 Route::resource('users', 'UserController')->middleware('auth');
 
-
 Route::resource('cars', 'CarController');
 
 Route::resource('operations', 'OperationController');
 
+Route::get('configuration', function () {
+    return view('operations.configuration');
+});
+
 Route::resource('carDrives', 'CarDriveController');
+
+Route::resource('carOperations', 'CarOperationController');
